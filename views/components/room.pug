@@ -1,0 +1,47 @@
+mixin room(props)
+    span.room
+        h2
+            a(href='/sala/' + props.RId) #{props.RName}
+        p
+            b #{props.RCount}
+            |  membros
+        p
+            | Capacidade total de  
+            b #{props.RMax}
+        p
+            small ##{props.RId}
+
+mixin room_simple(props)
+    span.room
+        b
+            a(href='/sala/' + props.RId) #{props.RName}
+        p
+            | #{props.RCount} membros
+        p
+            small ##{props.RId}
+
+mixin room_mix(props)
+    span.room        
+        if props.sibling
+            //- Sala gerada
+            - var tempName = props.sibling.RId * props.RId / props.RId;
+            h2 Sala mista ##{tempName}
+            | Feita com membros da sala 
+            b
+                a(href='/sala/' + props.RId) #{props.RName}
+            |  misturada com a sala 
+            b(class='mixed')
+                a(class='mixed', href='/sala/' + props.sibling.RId) #{props.sibling.RName}
+        else
+            h2 Sala #{props.RName}
+            b Sala não misturada
+        p
+            if props.RUsers.length > 0
+                for user in props.RUsers
+                    - var className = user.UMixed ? 'mixed' : '';
+                    - if (user.UFixed) className += ' fixed'
+                    span.user
+                        a(class=className, href='/membro/' + user.UId) #{user.UName} #{user.USName}
+            else
+                span.user
+                    b Nenhum membro

@@ -1,0 +1,11 @@
+extend layout.pug
+block main
+    h1 Pesquisa
+    p Pesquisar membros, salas ou espaços de café
+    form(action='/pesquisa' method='post')
+        input(type='text', placeholder='Nome ou ID', name='term')
+        select(name='type')
+            option(value="user") Membro
+            option(value="room") Sala
+            option(value="cafe") Espaço de café
+        input(type='submit', value='Pesquisar')

@@ -1,0 +1,11 @@
+extend layout.pug
+block main
+    h1 #{title}
+    span.room
+        p
+            b
+                a(href='/sala/' + room.RId) #{room.RName}
+            |  com capacidade de 
+            b #{room.RMax}
+            |  membros adicionada com sucesso
+    a(href='javascript:history.back()') Voltar

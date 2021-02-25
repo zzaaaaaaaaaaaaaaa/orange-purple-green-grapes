@@ -1,0 +1,197 @@
+:root {
+    --colorLight: #FFFFFF;
+    --colorLighter: #CACACA;
+
+    --colorDark: #5B5B5B;
+    --colorDarker: #333333;
+    --colorDarkest: #222222;
+
+    --colorLink: #FFAF47;
+    --colorLinkLighter: #FFD6A0;
+
+    --colorMixed: #A0FFFF;
+    --colorFixed: #ACFFA0;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3,h4 {
+    margin-top: 6px;
+}
+
+body {
+    color: var(--colorLighter);
+    background-color: var(--colorDarker);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+}
+a, a:active, a:visited, a:focus, label {
+    color: var(--colorLink);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--colorLinkLighter);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.mixed, .mixed * {
+    color: var(--colorMixed) !important;
+}
+.fixed, .fixed * {
+    color: var(--colorFixed) !important;
+}
+
+
+@media only screen and (max-width : 768px) {
+    #header * {
+        border-right: none !important;
+        border-left: none !important;
+    }
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    color: var(--colorLighter);
+    background-color: var(--colorDarkest);
+    border-bottom: 1px solid var(--colorDark);
+    user-select: none;
+}
+
+#header label:hover, #header input:hover {
+    color: var(--colorLinkLighter);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#header .menu {
+    /*
+    flex: 1;
+    */
+    align-self: center;
+    position: relative;
+    padding: 5px 20px;
+    border-right: 2px dotted var(--colorDarker);
+    text-align: center;
+}
+#header .menu:hover {
+    background-color: var(--colorDarker);
+    border-right: 2px dotted var(--colorDarkest);
+}
+
+/* Menus que são apenas links */
+#header label > a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Submenu */
+#header .menu .submenu-item {
+    position: relative;
+    list-style: none;
+    overflow-wrap: break-word;
+    padding: 5px 10px;
+    border-left: 2px dotted var(--colorDarker);
+    border-right: 2px dotted var(--colorDarker);
+}
+#header .menu .submenu {
+    position: absolute;
+    /*
+    width: 100%;
+    min-width: 15vw;
+    */
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: var(--colorDarkest);
+}
+#header .menu .submenu-item:hover {
+    background-color: var(--colorDarker);
+    border-left: 2px dotted var(--colorDarkest);
+    border-right: 2px dotted var(--colorDarkest);
+}
+/* Último item dos submenus */
+#header .menu .submenu-item:not(:first-of-type) {
+    border-top: 2px dotted var(--colorDarker);
+}
+
+/* Dropdown antigo */
+/*
+#header li:hover ul{
+    display: block;
+}
+
+#header li ul {
+    display: none;
+}
+*/
+
+#header input[type='checkbox'] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    outline: 0;
+}
+#header input[type='checkbox']:not(:checked) + .submenu {
+    display: none;
+}
+#header input[type='checkbox']:checked + .submenu {
+    display: block;
+}
+
+
+
+
+
+#main {
+    display: block;
+    padding: 5px;
+}
+
+form {
+    display: flex;
+}
+
+form input[type="text"], form input[type="number"] {
+    flex: 10;
+}
+form input[type="submit"] {
+    flex: 0;
+}
+
+form input, form select, form option {
+    background-color: var(--colorDarkest);
+    border: none;
+    color: var(--colorLighter);
+    outline: 0;
+    padding: 6px;
+    margin: 3px;
+}
+
+span.user, span.room {
+    display: block;
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: var(--colorDarkest);
+    border-bottom: 2px dotted var(--colorDarker);
+}
+span.room span.user {
+    background-color: var(--colorDarker);
+}

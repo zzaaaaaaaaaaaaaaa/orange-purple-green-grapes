@@ -1,0 +1,7 @@
+extend layout.pug
+block main
+    include components/room
+    h1 Lista de salas
+    p A lista a seguir contém todas as salas registradas na base de dados
+    for room in rooms
+        +room(room)

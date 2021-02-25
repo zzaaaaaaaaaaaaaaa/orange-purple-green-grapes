@@ -1,0 +1,10 @@
+extend layout.pug
+block main
+	h1 Início
+	| Existem um total de 
+	a(href='/listaDeMembros') #{users.length}
+	|  membros cadastrados divididos entre  
+	a(href='/listaDeSalas') #{rooms.length}
+	|  salas, utilizando  
+	a(href='/listaDeCafes') #{cafes.length}
+	|  espaços de café.

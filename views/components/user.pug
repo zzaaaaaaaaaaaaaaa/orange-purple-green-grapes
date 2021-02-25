@@ -1,0 +1,20 @@
+mixin user(props)
+    span.user
+        h2
+            a(href='/membro/' + props.UId) #{props.UName} #{props.USName}
+        |  estuda em 
+        b
+            a(href='/sala/' + props.room.RId) #{props.room.RName}
+        |  e utiliza o espaço 
+        b
+            a(href='/cafe/' + props.cafe.CId) #{props.cafe.CName}
+        p
+            small ##{props.UId}
+
+mixin user_simple(props)
+    span.user
+        p
+            b
+                a(href='/membro/' + props.UId) #{props.UName} #{props.USName}
+        p
+            small ##{props.UId}

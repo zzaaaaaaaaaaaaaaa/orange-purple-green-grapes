@@ -1,0 +1,14 @@
+extend layout.pug
+block main
+    h1 #{title}
+    span.user
+        p
+            b
+                a(href='/membro/' + user.UId) #{user.UName} #{user.USName}
+            |  adicionado com sucesso à 
+            b
+                a(href='/sala/' + room.RId) #{room.RName}
+            |  e espaço de café 
+            b
+                a(href='/cafe/' + cafe.CId) #{cafe.CName}
+    a(href='javascript:history.back()') Voltar

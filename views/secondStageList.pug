@@ -1,0 +1,15 @@
+extend layout.pug
+block main
+    include components/room
+
+    h1 Segunda etapa
+    p As salas a seguir são resultado da mistura de duas salas (quando possível) para estimular a troca de conhecimentos
+    //-p
+        | Observação: membros 
+        b(class='fixed') nessa cor
+        |  foram encaixados para não sobrarem sozinhos em suas salas
+    for room in rooms
+        //- Sala foi deletada e membros mesclados à anterior
+        if !room
+            - continue
+        +room_mix(room)

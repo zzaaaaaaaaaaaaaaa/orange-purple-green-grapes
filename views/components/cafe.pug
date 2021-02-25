@@ -1,0 +1,18 @@
+mixin cafe(props)
+    span.room
+        h2
+            a(href='/cafe/' + props.CId) #{props.CName}
+        p
+            b #{props.CCount}
+            |  membros
+        p
+            small ##{props.CId}
+
+mixin cafe_simple(props)
+    span.room
+        b
+            a(href='/cafe/' + props.CId) #{props.CName}
+        p
+            | #{props.CCount} membros
+        p
+            small ##{props.CId}

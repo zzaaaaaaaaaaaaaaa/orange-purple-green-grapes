@@ -1,0 +1,22 @@
+extend layout.pug
+block main
+    h1 #{user.UName} #{user.USName}
+    p Consulta sobre o membro
+    span.user
+        h3 Sala
+        | Cadastrado em 
+        b
+            a(href='/sala/' + user.URoom.RId) #{user.URoom.RName}
+        |  com outras #{user.URoom.RCount - 1} pessoas
+
+        h3 Espaço do café
+        | Utilizando o espaço 
+        b
+            a(href='/cafe/' + user.UCafe.CId) #{user.UCafe.CName}
+        |  com outras #{user.UCafe.CCount - 1} pessoas
+
+        h3 Detalhes da base de dados
+        - for(const prop in user)
+            b #{prop}: 
+            | #{user[prop]}
+            br

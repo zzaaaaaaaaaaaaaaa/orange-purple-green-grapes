@@ -1,0 +1,8 @@
+extend layout.pug
+block main
+    include components/cafe
+
+    h1 Lista de espaços de café
+    p A lista a seguir contém todos os espaços de café registrados na base de dados
+    for cafe in cafes
+        +cafe(cafe)

@@ -1,0 +1,7 @@
+extend layout.pug
+block main
+    h1 Adicionar nova sala com nome e capacidade
+    form(action='/registrarSala' method='post')
+        input(type='text', placeholder='Nome', name='name')
+        input(type='number', value='10' name='capacity')
+        input(type='submit', value='Adicionar')

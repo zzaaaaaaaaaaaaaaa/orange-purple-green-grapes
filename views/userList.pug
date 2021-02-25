@@ -1,0 +1,8 @@
+extend layout.pug
+block main
+    include components/user
+
+    h1 Lista de membros
+    p A lista a seguir contém todos as membros registrados na base de dados
+    for user in users
+        +user(user)

@@ -1,0 +1,49 @@
+header#header
+    div.menu
+        label(for='home') Início
+            a(id='home', href='/')
+
+    div.menu
+        label(for='members') Membros
+            input(id='members', type='checkbox', autocomplete='off')
+            ul.submenu
+                li.submenu-item
+                    label Lista
+                        a(href='/listaDeMembros')
+                li.submenu-item
+                    label Adicionar membro
+                        a(href='/registrarMembro')
+
+    div.menu
+        label(for='rooms') Salas
+            input(id='rooms', type='checkbox', autocomplete='off')
+            ul.submenu
+                li.submenu-item
+                    label Lista
+                        a(href='/listaDeSalas')
+                li.submenu-item
+                    label Adicionar sala
+                        a(href='/registrarSala')
+
+    div.menu
+        label(for='cafes') Espaços
+            input(id='cafes', type='checkbox', autocomplete='off')
+            ul.submenu
+                li.submenu-item
+                    label Lista
+                        a(href='/listaDeCafes')
+                li.submenu-item
+                    label Adicionar espaço de café
+                        a(href='/registrarCafe')
+
+    div.menu
+        label(for='simulation') Segunda Etapa
+            a(id='simulation', href='/listaSegundaEtapa')
+
+    div.menu
+        label(for='search') Pesquisar
+            a(id='search', href='/pesquisa')
+
+    div.menu
+        label(for='source') Repositório
+            a(id='source', href='//github.com/zzaaaaaaaaaaaaaaa/orange-purple-green-grapes')

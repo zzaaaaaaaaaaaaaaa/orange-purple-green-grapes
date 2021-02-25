@@ -1,0 +1,9 @@
+extend layout.pug
+block main
+    h1 #{title}
+    span.room
+        p
+            b
+                a(href='/cafe/' + cafe.CId) #{cafe.CName}
+            |  adicionado com sucesso
+    a(href='javascript:history.back()') Voltar

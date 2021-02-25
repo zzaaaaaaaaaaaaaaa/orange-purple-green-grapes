@@ -1,0 +1,7 @@
+extend layout.pug
+block main
+    h1 Adicionar novo membro
+    form(action='/registrarMembro' method='post')
+        input(type='text', placeholder='Nome', name='name')
+        input(type='text', placeholder='Sobrenome', name='surname')
+        input(type='submit', value='Adicionar')

@@ -1,0 +1,18 @@
+extend layout.pug
+block main
+    h1 #{cafe.CName}
+    p Consulta sobre o espaço de café
+    span.room
+        h3
+            | Frequentadores
+        if cafe.CUsers.length > 0
+            for user in cafe.CUsers
+                span.user
+                    a(href='/membro/' + user.UId) #{user.UName} #{user.USName}
+        else
+            | Nenhum frequentador
+        h3 Detalhes da base de dados
+        - for(const prop in cafe)
+            b #{prop}: 
+            | #{cafe[prop]}
+            br

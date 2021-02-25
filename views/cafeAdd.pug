@@ -1,0 +1,6 @@
+extend layout.pug
+block main
+    h1 Adicionar novo espaço de café
+    form(action='/registrarCafe' method='post')
+        input(type='text', placeholder='Nome', name='name')
+        input(type='submit', value='Adicionar')

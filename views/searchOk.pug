@@ -1,0 +1,17 @@
+extend layout.pug
+block main
+    include components/user
+    include components/room
+    include components/cafe
+
+    h1 Resultados
+    p Encontrados #{results.length} resultados
+    for info in results
+        case type
+            when 'user'
+                +user_simple(info)
+            when 'room'
+                +room_simple(info)
+            when 'cafe'
+                +cafe_simple(info)
+    a(href='javascript:history.back()') Voltar

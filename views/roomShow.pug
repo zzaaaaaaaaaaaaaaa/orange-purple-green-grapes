@@ -1,0 +1,18 @@
+extend layout.pug
+block main
+    h1 #{room.RName}
+    p Consulta sobre a sala
+    span.room
+        h3
+            | Membros
+        if room.RUsers.length > 0
+            for user in room.RUsers
+                span.user
+                    a(href='/membro/' + user.UId) #{user.UName} #{user.USName}
+        else
+            | Nenhum membro
+        h3 Detalhes da base de dados
+        - for(const prop in room)
+            b #{prop}: 
+            | #{room[prop]}
+            br
