@@ -159,7 +159,7 @@ class CafeManager {
      * @memberof CafeManager
      */
     search (term, exact) {
-        if (isNaN(term)) exact = true;
+        if (!isNaN(term)) exact = true;
         
         const qrySelect = DB.prepare(`
         SELECT Cafes.*, COUNT(Users.CId) AS CCount

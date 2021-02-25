@@ -263,7 +263,7 @@ class RoomManager {
      * @memberof RoomManager
      */
     search (term, exact) {
-        if (isNaN(term)) exact = true;
+        if (!isNaN(term)) exact = true;
         
         const qrySelect = DB.prepare(`
         SELECT Rooms.*, COUNT(Users.RId) AS RCount

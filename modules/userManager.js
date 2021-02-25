@@ -105,7 +105,7 @@ class UserManager {
      * @memberof UserManager
      */
     search (term, exact) {
-        if (isNaN(term)) exact = true;
+        if (!isNaN(term)) exact = true;
         
         const qrySelect = DB.prepare(`
         SELECT Users.*
